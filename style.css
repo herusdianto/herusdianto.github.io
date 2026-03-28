@@ -269,3 +269,13 @@ footer a:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+[data-theme="light"] .link-icon svg {
+  color: #111;
+  stroke: #111;
+}
+[data-theme="dark"] .link-icon svg,
+body.dark .link-icon svg {
+  color: #fff;
+  stroke: #fff;
+}
