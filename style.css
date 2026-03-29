@@ -1,5 +1,7 @@
 /* ====== Root & Theme ====== */
 :root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
   --bg-primary: #0d1117;
   --bg-secondary: #161b22;
   --bg-card: #21262d;
@@ -28,6 +30,61 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  padding: 0 20px;
+}
+
+.github-link svg,
+#theme-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block;
+  color: var(--text-primary);
+  fill: var(--text-primary);
+  transition: color 0.2s, fill 0.2s;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.github-link:hover svg {
+  color: var(--primary-color);
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--bg-primary);
@@ -167,37 +224,6 @@ main {
   color: var(--accent);
   transform: translateY(2px);
 }
-
-/* ====== Theme Toggle ====== */
-.theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  z-index: 100;
-}
-.theme-toggle:hover {
-  transform: scale(1.1);
-  border-color: var(--accent);
-}
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--text-primary);
-}
-.sun-icon { display: none; }
-.moon-icon { display: block; }
-[data-theme="light"] .sun-icon { display: block; }
-[data-theme="light"] .moon-icon { display: none; }
 
 /* ====== Footer ====== */
 footer {

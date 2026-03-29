@@ -1,30 +1,50 @@
 // app.js - extracted from index.html
-// Check for saved theme preference or default to dark
-const getPreferredTheme = () => {
+// ==================== Theme Toggle ====================
+function bindThemeToggle() {
+    const themeSwitch = document.getElementById('theme-switch');
+
+    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) return savedTheme;
-    return 'dark'; // Default to dark mode
-};
+    if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+    } else {
+        document.body.setAttribute('data-theme', 'light');
+    }
 
-// Apply theme
-const setTheme = (theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-};
+    updateThemeIcon();
 
-// Toggle theme
-const toggleTheme = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-};
-
-// Initialize theme on load
-setTheme(getPreferredTheme());
-
-// Set current year
-const yearEl = document.getElementById('currentYear');
-if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+    if (themeSwitch) {
+        themeSwitch.addEventListener('click', () => {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            updateThemeIcon();
+        });
+    }
 }
 
+function updateThemeIcon() {
+    const themeIcon = document.getElementById('theme-icon');
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
+
+    if (themeIcon) {
+        if (isDark) {
+            themeIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5M17.6859 17.69L18.5 18.5M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>`;
+        } else {
+            themeIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`;
+        }
+    }
+}
+
+// Set current year
+document.addEventListener('DOMContentLoaded', function() {
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+    bindThemeToggle();
+});
