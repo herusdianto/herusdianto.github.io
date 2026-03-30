@@ -4,7 +4,7 @@ function bindThemeToggle() {
     const themeSwitch = document.getElementById('theme-switch');
 
     // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme') === null ? 'dark' : localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.setAttribute('data-theme', 'dark');
     } else {
