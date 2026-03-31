@@ -40,6 +40,89 @@ function updateThemeIcon() {
     }
 }
 
+// ==================== Favorites ====================
+function getFavorites() {
+    const favorites = localStorage.getItem('favorites');
+    return favorites ? JSON.parse(favorites) : [];
+}
+
+function saveFavorites(favorites) {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+function toggleFavorite(toolId) {
+    const favorites = getFavorites();
+    const index = favorites.indexOf(toolId);
+    
+    if (index === -1) {
+        favorites.push(toolId);
+    } else {
+        favorites.splice(index, 1);
+    }
+    
+    saveFavorites(favorites);
+    updateFavoriteButtons();
+    updateFavoritesSection();
+}
+
+function updateFavoriteButtons() {
+    const favorites = getFavorites();
+    const favoriteButtons = document.querySelectorAll('.favorite-btn');
+    
+    favoriteButtons.forEach(btn => {
+        const toolId = btn.getAttribute('data-tool-id');
+        const isFavorite = favorites.includes(toolId);
+        
+        if (isFavorite) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-label', 'Remove from favorites');
+        } else {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-label', 'Add to favorites');
+        }
+    });
+}
+
+function updateFavoritesSection() {
+    const favorites = getFavorites();
+    const favoritesSection = document.getElementById('favorites-section');
+    const favoritesGrid = document.getElementById('favorites-grid');
+    
+    if (!favoritesSection || !favoritesGrid) return;
+    
+    if (favorites.length === 0) {
+        favoritesSection.style.display = 'none';
+        return;
+    }
+    
+    favoritesSection.style.display = 'block';
+    favoritesGrid.innerHTML = '';
+    
+    favorites.forEach(toolId => {
+        const originalCard = document.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
+        if (originalCard) {
+            const clone = originalCard.cloneNode(true);
+            // Remove favorite button from cloned card
+            const favBtn = clone.querySelector('.favorite-btn');
+            if (favBtn) favBtn.remove();
+            favoritesGrid.appendChild(clone);
+        }
+    });
+}
+
+function bindFavoriteButtons() {
+    const favoriteButtons = document.querySelectorAll('.favorite-btn');
+    
+    favoriteButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const toolId = btn.getAttribute('data-tool-id');
+            toggleFavorite(toolId);
+        });
+    });
+}
+
 // Set current year
 document.addEventListener('DOMContentLoaded', function() {
     const yearEl = document.getElementById('currentYear');
@@ -47,4 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         yearEl.textContent = new Date().getFullYear();
     }
     bindThemeToggle();
+    bindFavoriteButtons();
+    updateFavoriteButtons();
+    updateFavoritesSection();
 });

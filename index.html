@@ -34,13 +34,23 @@
         </header>
 
         <main>
+            <div id="favorites-section" class="favorites-section" style="display: none;">
+                <p class="section-title">⭐ Favorites</p>
+                <div id="favorites-grid" class="tools-grid"></div>
+            </div>
+
             <p class="section-title">🛠️ Tools</p>
 
             <div class="tools-category">
                 <h2 class="tools-category-title">Generator</h2>
 
                 <div class="tools-grid">
-                    <a href="https://herusdianto.github.io/random-generator" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/random-generator" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="random-generator">
+                        <button class="favorite-btn" data-tool-id="random-generator" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#e67e22">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor"/>
@@ -60,7 +70,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/qrcode" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/qrcode" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="qrcode">
+                        <button class="favorite-btn" data-tool-id="qrcode" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#00b894">
                             <!-- Simple QR code icon: 3 big squares, 1 small square -->
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -79,7 +94,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/json-pojo" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/json-pojo" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="json-pojo">
+                        <button class="favorite-btn" data-tool-id="json-pojo" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#f57cba">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="5" y="13" width="14" height="7" rx="3.5"/>
@@ -98,7 +118,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/csv-gen" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/csv-gen" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="csv-gen">
+                        <button class="favorite-btn" data-tool-id="csv-gen" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon purple link-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -116,7 +141,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/hash-util" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/hash-util" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="hash-util">
+                        <button class="favorite-btn" data-tool-id="hash-util" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#34495e">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 9h16M4 15h16" stroke="currentColor"/>
@@ -138,7 +168,12 @@
                 <h2 class="tools-category-title">Converter</h2>
 
                 <div class="tools-grid">
-                    <a href="https://herusdianto.github.io/base64util" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/base64util" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="base64util">
+                        <button class="favorite-btn" data-tool-id="base64util" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#f59e42">
                             <!-- Base64 icon: inspired by icons8 base64 icon, with stacked horizontal bars and '64' -->
                             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,7 +192,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/csv-to-json" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/csv-to-json" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="csv-to-json">
+                        <button class="favorite-btn" data-tool-id="csv-to-json" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon green link-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8l-5-5z"/>
@@ -181,7 +221,12 @@
                 <h2 class="tools-category-title">Text Utilities</h2>
 
                 <div class="tools-grid">
-                    <a href="https://herusdianto.github.io/newline-joiner" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/newline-joiner" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="newline-joiner">
+                        <button class="favorite-btn" data-tool-id="newline-joiner" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon blue link-icon">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6h16"/>
@@ -199,7 +244,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/uniqify" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/uniqify" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="uniqify">
+                        <button class="favorite-btn" data-tool-id="uniqify" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#4f8cff">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor"/>
@@ -216,7 +266,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/diff-check" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/diff-check" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="diff-check">
+                        <button class="favorite-btn" data-tool-id="diff-check" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#222">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="4" width="7" height="16" rx="2" stroke="currentColor"/>
@@ -234,7 +289,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/case-converter" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/case-converter" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="case-converter">
+                        <button class="favorite-btn" data-tool-id="case-converter" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#9b59b6">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <text x="4" y="10" font-size="9" font-weight="bold" fill="currentColor">A</text>
@@ -253,7 +313,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/text-counter" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/text-counter" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="text-counter">
+                        <button class="favorite-btn" data-tool-id="text-counter" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#17a2b8">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6h16" stroke="currentColor"/>
@@ -277,7 +342,12 @@
                 <h2 class="tools-category-title">Viewer</h2>
 
                 <div class="tools-grid">
-                    <a href="https://herusdianto.github.io/json-format-viewer" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/json-format-viewer" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="json-format-viewer">
+                        <button class="favorite-btn" data-tool-id="json-format-viewer" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#2dce89">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor"/>
@@ -293,7 +363,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/jwt" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/jwt" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="jwt">
+                        <button class="favorite-btn" data-tool-id="jwt" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#f44336">
                             <!-- JWT icon: Portrait format, vertical token with three stacked segments -->
                             <svg width="48" height="64" viewBox="0 0 24 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -318,7 +393,12 @@
                 <h2 class="tools-category-title">Tester</h2>
                 
                 <div class="tools-grid">
-                    <a href="https://herusdianto.github.io/api-tester" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/api-tester" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="api-tester">
+                        <button class="favorite-btn" data-tool-id="api-tester" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#6c5ce7">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor"/>
@@ -333,7 +413,12 @@
                         </svg>
                     </a>
 
-                    <a href="https://herusdianto.github.io/regex-tester" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <a href="https://herusdianto.github.io/regex-tester" target="_blank" rel="noopener noreferrer" class="tool-card" data-tool-id="regex-tester">
+                        <button class="favorite-btn" data-tool-id="regex-tester" aria-label="Add to favorites">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </button>
                         <div class="tool-icon link-icon" style="color:#e74c3c">
                             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11" cy="11" r="8" stroke="currentColor"/>

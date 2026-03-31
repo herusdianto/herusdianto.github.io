@@ -305,3 +305,52 @@ body.dark .link-icon svg {
   color: #fff;
   stroke: #fff;
 }
+
+/* ====== Favorites ====== */
+.favorites-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-btn:hover {
+  background: var(--bg-secondary);
+  transform: scale(1.1);
+}
+
+.favorite-btn .star-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-secondary);
+  fill: none;
+  transition: all 0.2s;
+}
+
+.favorite-btn:hover .star-icon {
+  stroke: #f59e0b;
+}
+
+.favorite-btn.active .star-icon {
+  fill: #f59e0b;
+  stroke: #f59e0b;
+}
+
+.tool-card {
+  position: relative;
+}
