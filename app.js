@@ -123,6 +123,37 @@ function bindFavoriteButtons() {
     });
 }
 
+// ==================== Statistics ====================
+function updateStatistics() {
+    const categories = document.querySelectorAll('.tools-category');
+    const statisticsGrid = document.getElementById('statistics-grid');
+    
+    if (!statisticsGrid) return;
+    
+    statisticsGrid.innerHTML = '';
+    
+    let totalTools = 0;
+    
+    categories.forEach(category => {
+        const titleElement = category.querySelector('.tools-category-title');
+        const tools = category.querySelectorAll('.tool-card');
+        
+        if (titleElement && tools.length > 0) {
+            const categoryName = titleElement.textContent;
+            const toolCount = tools.length;
+            totalTools += toolCount;
+            
+            const statCard = document.createElement('div');
+            statCard.className = 'stat-card';
+            statCard.innerHTML = `
+                <div class="stat-count">${toolCount}</div>
+                <div class="stat-category">${categoryName}</div>
+            `;
+            statisticsGrid.appendChild(statCard);
+        }
+    });
+}
+
 // Set current year
 document.addEventListener('DOMContentLoaded', function() {
     const yearEl = document.getElementById('currentYear');
@@ -133,4 +164,5 @@ document.addEventListener('DOMContentLoaded', function() {
     bindFavoriteButtons();
     updateFavoriteButtons();
     updateFavoritesSection();
+    updateStatistics();
 });

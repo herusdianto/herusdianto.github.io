@@ -306,6 +306,57 @@ body.dark .link-icon svg {
   stroke: #fff;
 }
 
+/* ====== Statistics ====== */
+.statistics-section {
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.stat-count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.stat-category {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-total {
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  border: none;
+}
+
+.stat-total .stat-count {
+  color: white;
+}
+
+.stat-total .stat-category {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* ====== Favorites ====== */
 .favorites-section {
   margin-bottom: 2.5rem;
