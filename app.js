@@ -102,24 +102,27 @@ function updateFavoritesSection() {
         const originalCard = document.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
         if (originalCard) {
             const clone = originalCard.cloneNode(true);
-            // Remove favorite button from cloned card
+            // Keep favorite button in cloned card for remove functionality
             const favBtn = clone.querySelector('.favorite-btn');
-            if (favBtn) favBtn.remove();
+            if (favBtn) {
+                favBtn.classList.add('active');
+                favBtn.setAttribute('aria-label', 'Remove from favorites');
+            }
             favoritesGrid.appendChild(clone);
         }
     });
 }
 
 function bindFavoriteButtons() {
-    const favoriteButtons = document.querySelectorAll('.favorite-btn');
-    
-    favoriteButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // Use event delegation to handle all favorite button clicks
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.favorite-btn');
+        if (btn) {
             e.preventDefault();
             e.stopPropagation();
             const toolId = btn.getAttribute('data-tool-id');
             toggleFavorite(toolId);
-        });
+        }
     });
 }
 
